@@ -1,24 +1,20 @@
-package com.example.pizza.model.ingredient;
+package com.example.pizza.model.pizza;
+
+import lombok.Data;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table(name = "foodstuffs")
-public class Foodstuffs {
+
+public class Pizzas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-
-    @Column
     private String name;
-
-    @Column
+    private String description;
     private double prize;
 
-    private double cost;
 
     public Long getId() {
         return id;
@@ -34,6 +30,14 @@ public class Foodstuffs {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getPrize() {
